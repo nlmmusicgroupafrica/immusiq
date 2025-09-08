@@ -943,6 +943,74 @@
       transform: translateY(-5px) scale(1.1);
       box-shadow: 0 5px 15px rgba(255, 0, 200, 0.5);
     }
+    
+    /* Artist Description Section */
+    .artist-description {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      margin: 60px auto;
+      max-width: 900px;
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .artist-description::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at top right, rgba(0, 240, 255, 0.1) 0%, transparent 70%);
+      z-index: 0;
+    }
+    
+    .artist-description img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid transparent;
+      background: var(--gradient) padding-box, var(--gradient) border-box;
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+      position: relative;
+      z-index: 1;
+      transition: var(--transition);
+    }
+    
+    .artist-description:hover img {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0, 240, 255, 0.4);
+    }
+    
+    .artist-description-content {
+      flex: 1;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .artist-description h3 {
+      font-size: 1.8rem;
+      color: var(--neon-blue);
+      font-weight: 800;
+      margin-bottom: 15px;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    .artist-description p {
+      color: var(--light-text);
+      line-height: 1.8;
+    }
   </style>
 </head>
 <body>
@@ -956,9 +1024,9 @@
         <ul>
           <li><a href="#" onclick="showPage('home')">Home</a></li>
           <li><a href="#" onclick="showPage('music')">Music</a></li>
-          <li><a href="#" onclick="showPage('nlm-family')">NLM Family</a></li>
           <li><a href="#" onclick="showPage('about')">About</a></li>
           <li><a href="#" onclick="showPage('bookings')">Bookings</a></li>
+          <li><a href="#" onclick="showPage('nlm-family')">NLM Family</a></li>
         </ul>
       </nav>
     </div>
@@ -1002,23 +1070,15 @@
     <section class="nlm-family">
       <div class="container">
         <h2>WE ARE NLM FAMILY</h2>
-        <p>NLM Music Group Africa is more than just a label—it's a family of talented artists and creators pushing the boundaries of African electronic music.</p>
+        <p>
+          NLM Music Group Africa was founded in 2025 by visionary music entrepreneur <strong>Ailwei Maduna Wa Malada</strong>, who named the label after his mother, <strong>Ntampose Lettia Maduna</strong>.
+        </p>
         
-        <div class="family-members">
-          <div class="family-member">
-            <img src="artist1.jpg" alt="Artist 1">
-            <h3>I'M MusiQ</h3>
-            <p>EDM & Classical Fusion</p>
-          </div>
-          <div class="family-member">
-            <img src="artist2.jpg" alt="Artist 2">
-            <h3>AfroBeatz</h3>
-            <p>Amapiano Specialist</p>
-          </div>
-          <div class="family-member">
-            <img src="artist3.jpg" alt="Artist 3">
-            <h3>DJ Nova</h3>
-            <p>Deep House</p>
+        <div class="mother-tribute floating">
+          <img src="6.png" alt="Ntampose Lettia Maduna">
+          <div class="mother-tribute-content">
+            <p>Ntampose Lettia Maduna</p>
+            <div class="title">Inspiring Force Behind NLM Music Group Africa</div>
           </div>
         </div>
         
@@ -1083,81 +1143,21 @@
     </section>
   </div>
 
-  <!-- NLM Family Page -->
-  <div id="nlm-family" class="page-content">
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">NLM Family</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: var(--light-text);">
-          NLM Music Group Africa is a family of talented artists and creators pushing the boundaries of African electronic music. Founded in honor of Ntampose Lettia Maduna, we're dedicated to showcasing the best of African talent to the world.
-        </p>
-        
-        <div class="mother-tribute floating">
-          <img src="6.png" alt="Ntampose Lettia Maduna">
-          <div class="mother-tribute-content">
-            <p>Ntampose Lettia Maduna</p>
-            <div class="title">Inspiring Force Behind NLM Music Group Africa</div>
-          </div>
-        </div>
-        
-        <div class="artists-container">
-          <div class="artist-card floating">
-            <div class="artist-image-container">
-              <img src="artist1.jpg" alt="I'M MusiQ" class="artist-image">
-              <div class="artist-social">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-spotify"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-              </div>
-            </div>
-            <div class="artist-info">
-              <h3 class="artist-name">I'M MusiQ</h3>
-              <p class="artist-bio">Genre-blending artist merging classical piano with high-energy EDM</p>
-              <span class="artist-genre">EDM • Classical Fusion</span>
-            </div>
-          </div>
-          
-          <div class="artist-card floating">
-            <div class="artist-image-container">
-              <img src="artist2.jpg" alt="AfroBeatz" class="artist-image">
-              <div class="artist-social">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-spotify"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-              </div>
-            </div>
-            <div class="artist-info">
-              <h3 class="artist-name">AfroBeatz</h3>
-              <p class="artist-bio">Amapiano specialist creating infectious rhythms that move your soul</p>
-              <span class="artist-genre">Amapiano • Afro House</span>
-            </div>
-          </div>
-          
-          <div class="artist-card floating">
-            <div class="artist-image-container">
-              <img src="artist3.jpg" alt="DJ Nova" class="artist-image">
-              <div class="artist-social">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-spotify"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-              </div>
-            </div>
-            <div class="artist-info">
-              <h3 class="artist-name">DJ Nova</h3>
-              <p class="artist-bio">Deep house maestro crafting immersive soundscapes</p>
-              <span class="artist-genre">Deep House • Soulful</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
   <!-- About Page -->
   <div id="about" class="page-content">
     <section class="section">
       <div class="container">
         <h2 class="section-title">About</h2>
+        
+        <div class="artist-description floating">
+          <img src="ar.png" alt="I'M MusiQ">
+          <div class="artist-description-content">
+            <h3>I'M MusiQ</h3>
+            <p>
+              I'M MusiQ is a pioneering electronic music artist who fuses classical piano training with cutting-edge EDM production. Signed to NLM Music Group Africa, a label founded in 2025 by Ailwei Maduna Wa Malada in honor of his mother, Ntampose Lettia Maduna. Together, we're pushing the boundaries of African electronic music and bringing its unique sound to the global stage.
+            </p>
+          </div>
+        </div>
         
         <div class="about-container">
           <div class="about-card floating">
@@ -1220,14 +1220,54 @@
     </section>
   </div>
 
+  <!-- NLM Family Page -->
+  <div id="nlm-family" class="page-content">
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">NLM Family</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: var(--light-text);">
+          NLM Music Group Africa was founded in 2025 by visionary music entrepreneur <strong>Ailwei Maduna Wa Malada</strong>, who named the label after his mother, <strong>Ntampose Lettia Maduna</strong>.
+        </p>
+        
+        <div class="mother-tribute floating">
+          <img src="6.png" alt="Ntampose Lettia Maduna">
+          <div class="mother-tribute-content">
+            <p>Ntampose Lettia Maduna</p>
+            <div class="title">Inspiring Force Behind NLM Music Group Africa</div>
+          </div>
+        </div>
+        
+        <div class="about-container">
+          <div class="about-card floating">
+            <img src="founder.png" alt="Founder">
+            <h3>Founder</h3>
+            <p>Ailwei Maduna Wa Malada</p>
+          </div>
+          <div class="about-card floating">
+            <img src="ar.png" alt="Head of A&R">
+            <h3>Head of Music (A&R)</h3>
+            <p>Ailwei Maduna Wa Malada</p>
+          </div>
+        </div>
+        
+        <div style="max-width: 800px; margin: 60px auto 0; background: var(--card-bg); padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); border: 1px solid var(--border);">
+          <h3 style="text-align: center; margin-bottom: 20px; color: var(--accent);">Our Mission</h3>
+          <p style="color: var(--light-text); line-height: 1.8; text-align: center;">
+            At NLM Music Group Africa, we are dedicated to discovering and nurturing African musical talent, providing a platform for artists to share their unique sounds with the world. We believe in the power of music to transcend boundaries and bring people together.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
   <footer>
     <div class="container">
       <div class="footer-links">
         <a href="#" onclick="showPage('home')">Home</a>
         <a href="#" onclick="showPage('music')">Music</a>
-        <a href="#" onclick="showPage('nlm-family')">NLM Family</a>
         <a href="#" onclick="showPage('about')">About</a>
         <a href="#" onclick="showPage('bookings')">Bookings</a>
+        <a href="#" onclick="showPage('nlm-family')">NLM Family</a>
       </div>
       <div class="icon-only" style="margin: 30px 0;">
         <a href="https://www.instagram.com/nlmmusicgroupafrica/profilecard/?igsh=MWtpaWhua3l1ZG1weQ==" target="_blank"><i class="fab fa-instagram"></i></a>
