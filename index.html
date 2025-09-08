@@ -3,22 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NLM Music Group Africa - Home</title>
+  <title>I'M MusiQ - Home</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #0A0A2A;
+      --primary: #0A0A0A;
       --secondary: #FF00C8;
       --accent: #00F0FF;
       --highlight: #FFD700;
+      --neon-pink: #FF00C8;
+      --neon-blue: #00F0FF;
+      --neon-purple: #BF00FF;
+      --neon-green: #39FF14;
       --text: #FFFFFF;
       --light-text: #BBBBBB;
-      --bg: #0A0A2A;
-      --card-bg: rgba(26, 26, 48, 0.8);
+      --bg: #0A0A0A;
+      --card-bg: rgba(20, 20, 20, 0.8);
       --border: rgba(0, 240, 255, 0.3);
       --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-      --gradient: linear-gradient(135deg, var(--secondary), var(--accent));
+      --gradient: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
+      --neon-glow-pink: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px var(--neon-pink), 0 0 35px var(--neon-pink), 0 0 40px var(--neon-pink);
+      --neon-glow-blue: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px var(--neon-blue), 0 0 35px var(--neon-blue), 0 0 40px var(--neon-blue);
     }
     
     * {
@@ -63,7 +69,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(10, 10, 42, 0.9);
+      background: rgba(10, 10, 10, 0.9);
       backdrop-filter: blur(10px);
       z-index: 1000;
       padding: 15px 0;
@@ -147,7 +153,7 @@
     .hero {
       padding: 180px 0 100px;
       text-align: center;
-      background: linear-gradient(rgba(10, 10, 42, 0.9), rgba(10, 10, 42, 0.9));
+      background: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.9));
       background-size: cover;
       background-position: center;
       position: relative;
@@ -234,7 +240,7 @@
     
     .btn-primary:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(255, 0, 200, 0.4);
+      box-shadow: 0 10px 20px rgba(255, 0, 200, 0.4), var(--neon-glow-pink);
       color: white;
     }
     
@@ -248,7 +254,7 @@
       background: var(--accent);
       color: var(--primary);
       transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 240, 255, 0.3);
+      box-shadow: 0 10px 20px rgba(0, 240, 255, 0.3), var(--neon-glow-blue);
     }
     
     /* Sections */
@@ -378,7 +384,7 @@
     
     .mother-tribute p {
       font-size: 1.8rem;
-      color: var(--secondary);
+      color: var(--neon-pink);
       font-weight: 800;
       text-align: center;
       margin-bottom: 15px;
@@ -387,7 +393,7 @@
     
     .mother-tribute .title {
       font-size: 1.2rem;
-      color: var(--accent);
+      color: var(--neon-blue);
       text-align: center;
       font-weight: 600;
     }
@@ -569,7 +575,7 @@
     
     /* Footer */
     footer {
-      background: rgba(10, 10, 42, 0.95);
+      background: rgba(10, 10, 10, 0.95);
       color: var(--text);
       padding: 60px 0 30px;
       text-align: center;
@@ -1001,6 +1007,17 @@
       transform: scale(1.05);
       box-shadow: 0 5px 15px rgba(255, 0, 200, 0.3);
     }
+    
+    /* Neon Elements */
+    .neon-text {
+      color: #fff;
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--neon-pink), 0 0 20px var(--neon-pink), 0 0 25px var(--neon-pink);
+    }
+    
+    .neon-border {
+      border: 2px solid #fff;
+      box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--neon-blue), 0 0 20px var(--neon-blue);
+    }
   </style>
 </head>
 <body>
@@ -1014,10 +1031,9 @@
       <nav>
         <ul>
           <li><a href="#" onclick="showPage('home')">Home</a></li>
-          <li><a href="#" onclick="showPage('about')">About</a></li>
-          <li><a href="#" onclick="showPage('artists')">Artists</a></li>
           <li><a href="#" onclick="showPage('releases')">Music</a></li>
-          <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+          <li><a href="#" onclick="showPage('bookings')">Bookings</a></li>
+          <li><a href="#" onclick="showPage('about')">About</a></li>
         </ul>
       </nav>
     </div>
@@ -1027,13 +1043,36 @@
   <div id="home" class="page-content active">
     <section class="hero">
       <div class="container">
-        <h1>We Are NLM Family</h1>
+        <h1>I'M MusiQ</h1>
         <p>
-          NLM Music Group Africa was founded in 2025 by visionary music entrepreneur <strong>Ailwei Maduna Wa Malada</strong>, who named the label after his mother, <strong>Ntampose Lettia Maduna</strong>.
+          A genre-blending artist merging classical piano with high-energy EDM. His sound combines emotive melodies and powerful electronic beats, creating a unique fusion of elegance and intensity. Inspired by both classical and modern dance music, he crafts immersive tracks that captivate listeners and energize crowds.
         </p>
         <div>
-          <a href="#" class="btn btn-primary" onclick="showPage('artists')">Explore Artists</a>
+          <a href="#" class="btn btn-primary" onclick="showPage('bookings')">Bookings</a>
           <a href="#" class="btn btn-outline" onclick="showPage('releases')">Check Music Releases</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Latest Releases</h2>
+        
+        <div class="release-card">
+          <img src="1.png" alt="Tomorrowland Anthems Album" class="release-image">
+          <div class="release-info">
+            <h3 class="release-title">Tomorrowland Anthems Album</h3>
+            <p class="release-description">
+              Brace yourself for a seismic clash of sounds—where Amapiano's hypnotic grooves collide with EDM's explosive drops! Tomorrowland Anthems isn't just a remix album; it's a global dancefloor revolution. I'M MusiQ takes iconic festival bangers and injects them with Afro-house swagger, rewiring them with log-drum rhythms, shimmering synths, and basslines that hit like lightning. 
+            </p>
+            <div class="release-links">
+              <a href="https://www.mediafire.com/file/cckwtg7vf4pel7c/I%2527M_MusiQ_-_Tomorrowland_Anthems_Album.zip/file" class="btn btn-primary" target="_blank">Download Album</a>
+            </div>
+          </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+          <a href="#" class="btn btn-outline" onclick="showPage('releases')">View All Releases</a>
         </div>
       </div>
     </section>
@@ -1055,95 +1094,6 @@
         
         <div style="text-align: center; margin-top: 40px;">
           <a href="#" class="btn btn-primary" onclick="showPage('about')">Learn More About Us</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Artists</h2>
-        
-        <div class="artist-slider">
-          <div class="slider-container" id="slider-container">
-            <!-- Slide 1 -->
-            <div class="slide">
-              <img src="8.png" alt="DoskiWaAfrika" class="slide-image">
-              <div class="slide-content">
-                <h3 class="slide-name">DoskiWaAfrika</h3>
-                <p class="slide-bio">An upcoming Afro and Deep House DJ/Producer from Koster, North-West, South Africa. Known for blending rich African rhythms with deep, emotive house grooves that move both hearts and feet.</p>
-                <span class="slide-genre">Afro House | Deep Tech</span>
-              </div>
-            </div>
-            
-            <!-- Slide 2 -->
-            <div class="slide">
-              <img src="9.png" alt="I'M MusiQ" class="slide-image">
-              <div class="slide-content">
-                <h3 class="slide-name">I'M MusiQ</h3>
-                <p class="slide-bio">A genre-blending artist merging classical piano with high-energy EDM. His sound combines emotive melodies and powerful electronic beats, creating a unique fusion of elegance and intensity.</p>
-                <span class="slide-genre">Amapiano | EDM</span>
-              </div>
-            </div>
-            
-            <!-- Slide 3 -->
-            <div class="slide">
-              <img src="11.png" alt="T.fly deDeejay" class="slide-image">
-              <div class="slide-content">
-                <h3 class="slide-name">T.fly deDeejay</h3>
-                <p class="slide-bio">A dynamic DJ and producer specializing in Progressive House and Afro House, crafting hypnotic grooves that blend deep rhythms with soulful, dance-driven energy.</p>
-                <span class="slide-genre">Progressive House | Afro House</span>
-              </div>
-            </div>
-            
-            <!-- Slide 4 -->
-            <div class="slide">
-              <img src="13.png" alt="Vutome" class="slide-image">
-              <div class="slide-content">
-                <h3 class="slide-name">Vutome</h3>
-                <p class="slide-bio">Vutome is a DJ dedicated to the deeper side of house music. His sound is a focused exploration of soulful grooves, warm basslines, and atmospheric melodies.</p>
-                <span class="slide-genre">Deep House | Soulful House</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="slider-nav">
-            <button class="slider-btn" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
-            <button class="slider-btn" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
-          </div>
-          
-          <div class="slider-dots">
-            <span class="dot active" onclick="goToSlide(0)"></span>
-            <span class="dot" onclick="goToSlide(1)"></span>
-            <span class="dot" onclick="goToSlide(2)"></span>
-            <span class="dot" onclick="goToSlide(3)"></span>
-          </div>
-        </div>
-        
-        <div style="text-align: center; margin-top: 40px;">
-          <a href="#" class="btn btn-primary" onclick="showPage('artists')">View All Artists</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Latest Releases</h2>
-        
-        <div class="release-card">
-          <img src="7.png" alt="Evil Eye EP" class="release-image">
-          <div class="release-info">
-            <h3 class="release-title">Evil Eye EP</h3>
-            <p class="release-description">
-              A 6-track EP that merges the rich rhythms of Afro House with the deep, rolling basslines of Tech. Built for the dancefloor, it's a hypnotic journey—where percussive grooves meet dark, driving energy. Tight, powerful, and relentlessly rhythmic, this project showcases DoskiWaAfrika's signature sound: raw, spiritual, and made to move bodies.
-            </p>
-            <div class="release-links">
-              <a href="https://www.mediafire.com/file/huacucugcqqmr77/DoskiWaAfrika_-_Evil_Eye_EP.zip/file" class="btn btn-primary" target="_blank">Download EP</a>
-            </div>
-          </div>
-        </div>
-        
-        <div style="text-align: center; margin-top: 40px;">
-          <a href="#" class="btn btn-outline" onclick="showPage('releases')">View All Releases</a>
         </div>
       </div>
     </section>
@@ -1189,60 +1139,6 @@
     </section>
   </div>
 
-  <!-- Artists Page -->
-  <div id="artists" class="page-content">
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">NLM Artists</h2>
-        <div class="artists-container">
-          <div class="artist-card">
-            <div class="artist-image-container">
-              <img src="8.png" alt="DoskiWaAfrika" class="artist-image">
-            </div>
-            <div class="artist-info">
-              <h3 class="artist-name">DoskiWaAfrika</h3>
-              <p class="artist-bio">An upcoming Afro and Deep House DJ/Producer from Koster, North-West, South Africa. Known for blending rich African rhythms with deep, emotive house grooves that move both hearts and feet.</p>
-              <span class="artist-genre">Afro House | Deep Tech</span>
-            </div>
-          </div>
-          
-          <div class="artist-card">
-            <div class="artist-image-container">
-              <img src="9.png" alt="I'M MusiQ" class="artist-image">
-            </div>
-            <div class="artist-info">
-              <h3 class="artist-name">I'M MusiQ</h3>
-              <p class="artist-bio">A genre-blending artist merging classical piano with high-energy EDM. His sound combines emotive melodies and powerful electronic beats, creating a unique fusion of elegance and intensity. Inspired by both classical and modern dance music, he crafts immersive tracks that captivate listeners and energize crowds.</p>
-              <span class="artist-genre">Amapiano | EDM</span>
-            </div>
-          </div>
-          
-          <div class="artist-card">
-            <div class="artist-image-container">
-              <img src="11.png" alt="T.fly deDeejay" class="artist-image">
-            </div>
-            <div class="artist-info">
-              <h3 class="artist-name">T.fly deDeejay</h3>
-              <p class="artist-bio">A dynamic DJ and producer specializing in Progressive House and Afro House, crafting hypnotic grooves that blend deep rhythms with soulful, dance-driven energy. His sound is a fusion of rich African influences and modern electronic production, designed to move both bodies and minds.</p>
-              <span class="artist-genre">Progressive House | Afro House</span>
-            </div>
-          </div>
-          
-          <div class="artist-card">
-            <div class="artist-image-container">
-              <img src="13.png" alt="Vutome" class="artist-image">
-            </div>
-            <div class="artist-info">
-              <h3 class="artist-name">Vutome</h3>
-              <p class="artist-bio">Vutome is a DJ dedicated to the deeper side of house music. His sound is a focused exploration of soulful grooves, warm basslines, and atmospheric melodies, crafted for both introspection and dance.</p>
-              <span class="artist-genre">Deep House | Soulful House</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
   <!-- Releases Page -->
   <div id="releases" class="page-content">
     <section class="section">
@@ -1282,14 +1178,14 @@
         </div>
         
         <div class="release-card">
-          <img src="7.png" alt="Evil Eye EP" class="release-image">
+          <img src="1.png" alt="Tomorrowland Anthems Album" class="release-image">
           <div class="release-info">
-            <h3 class="release-title">Evil Eye EP</h3>
+            <h3 class="release-title">Tomorrowland Anthems Album</h3>
             <p class="release-description">
-              A 6-track EP that merges the rich rhythms of Afro House with the deep, rolling basslines of Tech. Built for the dancefloor, it's a hypnotic journey—where percussive grooves meet dark, driving energy. Tight, powerful, and relentlessly rhythmic, this project showcases DoskiWaAfrika's signature sound: raw, spiritual, and made to move bodies.
+              Brace yourself for a seismic clash of sounds—where Amapiano's hypnotic grooves collide with EDM's explosive drops! Tomorrowland Anthems isn't just a remix album; it's a global dancefloor revolution. I'M MusiQ takes iconic festival bangers and injects them with Afro-house swagger, rewiring them with log-drum rhythms, shimmering synths, and basslines that hit like lightning.
             </p>
             <div class="release-links">
-              <a href="https://www.mediafire.com/file/huacucugcqqmr77/DoskiWaAfrika_-_Evil_Eeye_EP.zip/file" class="btn btn-primary" target="_blank">Download EP</a>
+              <a href="https://www.mediafire.com/file/cckwtg7vf4pel7c/I%2527M_MusiQ_-_Tomorrowland_Anthems_Album.zip/file" class="btn btn-primary" target="_blank">Download Album</a>
             </div>
           </div>
         </div>
@@ -1297,8 +1193,8 @@
     </section>
   </div>
 
-  <!-- Contact Page -->
-  <div id="contact" class="page-content">
+  <!-- Bookings Page -->
+  <div id="bookings" class="page-content">
     <section class="section">
       <div class="container">
         <h2 class="section-title">Get In Touch</h2>
@@ -1338,10 +1234,9 @@
     <div class="container">
       <div class="footer-links">
         <a href="#" onclick="showPage('home')">Home</a>
-        <a href="#" onclick="showPage('about')">About</a>
-        <a href="#" onclick="showPage('artists')">Artists</a>
         <a href="#" onclick="showPage('releases')">Music</a>
-        <a href="#" onclick="showPage('contact')">Contact</a>
+        <a href="#" onclick="showPage('bookings')">Bookings</a>
+        <a href="#" onclick="showPage('about')">About</a>
       </div>
       <div class="icon-only" style="margin: 30px 0;">
         <a href="https://www.instagram.com/nlmmusicgroupafrica/profilecard/?igsh=MWtpaWhua3l1ZG1weQ==" target="_blank"><i class="fab fa-instagram"></i></a>
