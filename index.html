@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>I'M MusiQ - Home</title>
+  <title>I'M MusiQ - Official Website</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <style>
@@ -11,7 +11,6 @@
       --primary: #0A0A0A;
       --secondary: #FF00C8;
       --accent: #00F0FF;
-      --highlight: #FFD700;
       --neon-pink: #FF00C8;
       --neon-blue: #00F0FF;
       --neon-purple: #BF00FF;
@@ -398,6 +397,91 @@
       font-weight: 600;
     }
     
+    /* NLM Family Section */
+    .nlm-family {
+      text-align: center;
+      padding: 80px 0;
+      background: var(--card-bg);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .nlm-family::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(255, 0, 200, 0.1) 0%, transparent 70%);
+      z-index: 0;
+    }
+    
+    .nlm-family h2 {
+      font-size: 3rem;
+      margin-bottom: 30px;
+      font-weight: 900;
+      text-transform: uppercase;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .nlm-family p {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      font-size: 1.2rem;
+      color: var(--light-text);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .family-members {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .family-member {
+      width: 200px;
+      text-align: center;
+    }
+    
+    .family-member img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 20px;
+      border: 3px solid transparent;
+      background: var(--gradient) padding-box, var(--gradient) border-box;
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      transition: var(--transition);
+    }
+    
+    .family-member:hover img {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255, 0, 200, 0.5);
+    }
+    
+    .family-member h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: var(--neon-blue);
+    }
+    
+    .family-member p {
+      color: var(--light-text);
+      font-size: 0.9rem;
+    }
+    
     /* Artists Section */
     .artists-container {
       display: flex;
@@ -713,6 +797,10 @@
       .logo-full-name {
         display: none;
       }
+      
+      .nlm-family h2 {
+        font-size: 2rem;
+      }
     }
     
     /* Floating elements animation */
@@ -726,11 +814,6 @@
       100% { transform: translateY(0px); }
     }
     
-    /* Glow effect */
-    .glow {
-      text-shadow: 0 0 10px rgba(255, 0, 200, 0.5), 0 0 20px rgba(255, 0, 200, 0.3);
-    }
-    
     /* Page content styles */
     .page-content {
       display: none;
@@ -741,151 +824,57 @@
       display: block;
     }
     
-    /* Artist Slider */
-    .artist-slider {
-      position: relative;
-      max-width: 800px;
-      margin: 0 auto;
-      overflow: hidden;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-      border: 1px solid var(--border);
+    /* Music Platforms Section */
+    .music-platforms {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 40px 0;
+      flex-wrap: wrap;
     }
     
-    .slider-container {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
-    
-    .slide {
-      min-width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px;
+    .platform-card {
       background: var(--card-bg);
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      width: 200px;
+      transition: var(--transition);
+      border: 1px solid var(--border);
       backdrop-filter: blur(10px);
     }
     
-    .slide-image {
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 30px;
-      border: 4px solid transparent;
-      background: var(--gradient) padding-box, var(--gradient) border-box;
-      background-origin: border-box;
-      background-clip: padding-box, border-box;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    .platform-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     }
     
-    .slide-content {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    
-    .slide-name {
-      font-size: 2rem;
-      font-weight: 800;
+    .platform-icon {
+      font-size: 40px;
       margin-bottom: 15px;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    
-    .slide-bio {
-      color: var(--light-text);
-      margin-bottom: 20px;
-      line-height: 1.6;
-    }
-    
-    .slide-genre {
-      display: inline-block;
-      padding: 8px 20px;
-      background: rgba(0, 240, 255, 0.1);
       color: var(--accent);
+    }
+    
+    .platform-name {
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+    
+    .platform-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: var(--gradient);
+      color: white;
       border-radius: 25px;
+      font-size: 0.9rem;
       font-weight: 600;
-      border: 1px solid rgba(0, 240, 255, 0.3);
-      margin-bottom: 25px;
-    }
-    
-    .slider-nav {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 20px;
-    }
-    
-    .slider-btn {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: var(--gradient);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: var(--transition);
-      border: none;
-      font-size: 1.2rem;
-    }
-    
-    .slider-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 5px 15px rgba(255, 0, 200, 0.4);
-    }
-    
-    .slider-dots {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 20px;
-    }
-    
-    .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--light-text);
-      cursor: pointer;
       transition: var(--transition);
     }
     
-    .dot.active {
-      background: var(--accent);
-      transform: scale(1.2);
-    }
-    
-    .youtube-icon {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 30px;
-    }
-    
-    .youtube-icon a {
-      width: 60px;
-      height: 60px;
-      background: var(--gradient);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition);
+    .platform-btn:hover {
+      transform: scale(1.05);
       box-shadow: 0 5px 15px rgba(255, 0, 200, 0.3);
-    }
-    
-    .youtube-icon a:hover {
-      transform: scale(1.1) translateY(-5px);
-      box-shadow: 0 8px 20px rgba(255, 0, 200, 0.5);
-    }
-    
-    .youtube-icon i {
-      font-size: 28px;
-      color: white;
     }
     
     /* Contact Icons */
@@ -954,86 +943,22 @@
       transform: translateY(-5px) scale(1.1);
       box-shadow: 0 5px 15px rgba(255, 0, 200, 0.5);
     }
-
-    /* Music Platforms Section */
-    .music-platforms {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin: 40px 0;
-      flex-wrap: wrap;
-    }
-    
-    .platform-card {
-      background: var(--card-bg);
-      border-radius: 15px;
-      padding: 25px;
-      text-align: center;
-      width: 200px;
-      transition: var(--transition);
-      border: 1px solid var(--border);
-      backdrop-filter: blur(10px);
-    }
-    
-    .platform-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    }
-    
-    .platform-icon {
-      font-size: 40px;
-      margin-bottom: 15px;
-      color: var(--accent);
-    }
-    
-    .platform-name {
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: var(--text);
-    }
-    
-    .platform-btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background: var(--gradient);
-      color: white;
-      border-radius: 25px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      transition: var(--transition);
-    }
-    
-    .platform-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 5px 15px rgba(255, 0, 200, 0.3);
-    }
-    
-    /* Neon Elements */
-    .neon-text {
-      color: #fff;
-      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--neon-pink), 0 0 20px var(--neon-pink), 0 0 25px var(--neon-pink);
-    }
-    
-    .neon-border {
-      border: 2px solid #fff;
-      box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--neon-blue), 0 0 20px var(--neon-blue);
-    }
   </style>
 </head>
 <body>
   <header>
     <div class="container header-container">
       <a href="#" class="logo" onclick="showPage('home')">
-        <img src="logo.png" alt="NLM Music Group Africa">
-        <span>NLM</span>
-        <span class="logo-full-name">Music Group Africa</span>
+        <img src="logo.png" alt="I'M MusiQ">
+        <span>I'M MusiQ</span>
       </a>
       <nav>
         <ul>
           <li><a href="#" onclick="showPage('home')">Home</a></li>
-          <li><a href="#" onclick="showPage('releases')">Music</a></li>
-          <li><a href="#" onclick="showPage('bookings')">Bookings</a></li>
+          <li><a href="#" onclick="showPage('music')">Music</a></li>
+          <li><a href="#" onclick="showPage('nlm-family')">NLM Family</a></li>
           <li><a href="#" onclick="showPage('about')">About</a></li>
+          <li><a href="#" onclick="showPage('bookings')">Bookings</a></li>
         </ul>
       </nav>
     </div>
@@ -1049,14 +974,14 @@
         </p>
         <div>
           <a href="#" class="btn btn-primary" onclick="showPage('bookings')">Bookings</a>
-          <a href="#" class="btn btn-outline" onclick="showPage('releases')">Check Music Releases</a>
+          <a href="#" class="btn btn-outline" onclick="showPage('music')">Listen Now</a>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <h2 class="section-title">Latest Releases</h2>
+        <h2 class="section-title">Latest Release</h2>
         
         <div class="release-card">
           <img src="1.png" alt="Tomorrowland Anthems Album" class="release-image">
@@ -1067,91 +992,56 @@
             </p>
             <div class="release-links">
               <a href="https://www.mediafire.com/file/cckwtg7vf4pel7c/I%2527M_MusiQ_-_Tomorrowland_Anthems_Album.zip/file" class="btn btn-primary" target="_blank">Download Album</a>
+              <a href="#" class="btn btn-outline" onclick="showPage('music')">More Music</a>
             </div>
           </div>
         </div>
-        
-        <div style="text-align: center; margin-top: 40px;">
-          <a href="#" class="btn btn-outline" onclick="showPage('releases')">View All Releases</a>
-        </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="nlm-family">
       <div class="container">
-        <h2 class="section-title">About NLM</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: var(--light-text);">
-          NLM Music Group Africa was founded in 2025 by visionary music entrepreneur <strong>Ailwei Maduna Wa Malada</strong>, who named the label after his mother, <strong>Ntampose Lettia Maduna</strong>.
-        </p>
+        <h2>WE ARE NLM FAMILY</h2>
+        <p>NLM Music Group Africa is more than just a label—it's a family of talented artists and creators pushing the boundaries of African electronic music.</p>
         
-        <div class="mother-tribute floating">
-          <img src="6.png" alt="Ntampose Lettia Maduna">
-          <div class="mother-tribute-content">
-            <p>Ntampose Lettia Maduna</p>
-            <div class="title">Inspiring Force Behind NLM Music Group Africa</div>
+        <div class="family-members">
+          <div class="family-member">
+            <img src="artist1.jpg" alt="Artist 1">
+            <h3>I'M MusiQ</h3>
+            <p>EDM & Classical Fusion</p>
+          </div>
+          <div class="family-member">
+            <img src="artist2.jpg" alt="Artist 2">
+            <h3>AfroBeatz</h3>
+            <p>Amapiano Specialist</p>
+          </div>
+          <div class="family-member">
+            <img src="artist3.jpg" alt="Artist 3">
+            <h3>DJ Nova</h3>
+            <p>Deep House</p>
           </div>
         </div>
         
-        <div style="text-align: center; margin-top: 40px;">
-          <a href="#" class="btn btn-primary" onclick="showPage('about')">Learn More About Us</a>
-        </div>
+        <a href="#" class="btn btn-primary" style="margin-top: 40px;" onclick="showPage('nlm-family')">Meet the Family</a>
       </div>
     </section>
   </div>
 
-  <!-- About Page -->
-  <div id="about" class="page-content">
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">About Us</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: var(--light-text);">
-          NLM Music Group Africa was founded in 2025 by visionary music entrepreneur <strong>Ailwei Maduna Wa Malada</strong>, who named the label after his mother, <strong>Ntampose Lettia Maduna</strong>.
-        </p>
-        
-        <div class="mother-tribute floating">
-          <img src="6.png" alt="Ntampose Lettia Maduna">
-          <div class="mother-tribute-content">
-            <p>Ntampose Lettia Maduna</p>
-            <div class="title">Inspiring Force Behind NLM Music Group Africa</div>
-          </div>
-        </div>
-        
-        <div class="about-container">
-          <div class="about-card floating">
-            <img src="founder.png" alt="Founder">
-            <h3>Founder</h3>
-            <p>Ailwei Maduna Wa Malada</p>
-          </div>
-          <div class="about-card floating">
-            <img src="ar.png" alt="Head of A&R">
-            <h3>Head of Music (A&R)</h3>
-            <p>Ailwei Maduna Wa Malada</p>
-          </div>
-        </div>
-        
-        <div style="max-width: 800px; margin: 60px auto 0; background: var(--card-bg); padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); border: 1px solid var(--border);">
-          <h3 style="text-align: center; margin-bottom: 20px; color: var(--accent);">Our Mission</h3>
-          <p style="color: var(--light-text); line-height: 1.8; text-align: center;">
-            At NLM Music Group Africa, we are dedicated to discovering and nurturing African musical talent, providing a platform for artists to share their unique sounds with the world. We believe in the power of music to transcend boundaries and bring people together.
-          </p>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- Releases Page -->
-  <div id="releases" class="page-content">
+  <!-- Music Page -->
+  <div id="music" class="page-content">
     <section class="section">
       <div class="container">
         <h2 class="section-title">Music</h2>
         
-        <div class="youtube-icon">
-          <a href="https://youtube.com/@nlmmusicgroup_africa?si=10d4PZwRt2xOzQVp" target="_blank">
-            <i class="fab fa-youtube"></i>
-          </a>
-        </div>
-        
         <div class="music-platforms">
+          <div class="platform-card">
+            <div class="platform-icon">
+              <i class="fab fa-youtube"></i>
+            </div>
+            <h4 class="platform-name">YouTube</h4>
+            <a href="https://youtube.com/@nlmmusicgroup_africa?si=10d4PZwRt2xOzQVp" class="platform-btn" target="_blank">Subscribe</a>
+          </div>
+          
           <div class="platform-card">
             <div class="platform-icon">
               <i class="fas fa-music"></i>
@@ -1193,14 +1083,114 @@
     </section>
   </div>
 
+  <!-- NLM Family Page -->
+  <div id="nlm-family" class="page-content">
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">NLM Family</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: var(--light-text);">
+          NLM Music Group Africa is a family of talented artists and creators pushing the boundaries of African electronic music. Founded in honor of Ntampose Lettia Maduna, we're dedicated to showcasing the best of African talent to the world.
+        </p>
+        
+        <div class="mother-tribute floating">
+          <img src="6.png" alt="Ntampose Lettia Maduna">
+          <div class="mother-tribute-content">
+            <p>Ntampose Lettia Maduna</p>
+            <div class="title">Inspiring Force Behind NLM Music Group Africa</div>
+          </div>
+        </div>
+        
+        <div class="artists-container">
+          <div class="artist-card floating">
+            <div class="artist-image-container">
+              <img src="artist1.jpg" alt="I'M MusiQ" class="artist-image">
+              <div class="artist-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-spotify"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+            <div class="artist-info">
+              <h3 class="artist-name">I'M MusiQ</h3>
+              <p class="artist-bio">Genre-blending artist merging classical piano with high-energy EDM</p>
+              <span class="artist-genre">EDM • Classical Fusion</span>
+            </div>
+          </div>
+          
+          <div class="artist-card floating">
+            <div class="artist-image-container">
+              <img src="artist2.jpg" alt="AfroBeatz" class="artist-image">
+              <div class="artist-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-spotify"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+            <div class="artist-info">
+              <h3 class="artist-name">AfroBeatz</h3>
+              <p class="artist-bio">Amapiano specialist creating infectious rhythms that move your soul</p>
+              <span class="artist-genre">Amapiano • Afro House</span>
+            </div>
+          </div>
+          
+          <div class="artist-card floating">
+            <div class="artist-image-container">
+              <img src="artist3.jpg" alt="DJ Nova" class="artist-image">
+              <div class="artist-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-spotify"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+            <div class="artist-info">
+              <h3 class="artist-name">DJ Nova</h3>
+              <p class="artist-bio">Deep house maestro crafting immersive soundscapes</p>
+              <span class="artist-genre">Deep House • Soulful</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- About Page -->
+  <div id="about" class="page-content">
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        
+        <div class="about-container">
+          <div class="about-card floating">
+            <img src="founder.png" alt="I'M MusiQ">
+            <h3>I'M MusiQ</h3>
+            <p>Genre-blending Electronic Artist</p>
+          </div>
+          
+          <div class="about-card floating">
+            <img src="ar.png" alt="NLM Music Group">
+            <h3>NLM Music Group</h3>
+            <p>African Electronic Music Label</p>
+          </div>
+        </div>
+        
+        <div style="max-width: 800px; margin: 60px auto 0; background: var(--card-bg); padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); border: 1px solid var(--border);">
+          <h3 style="text-align: center; margin-bottom: 20px; color: var(--accent);">Our Story</h3>
+          <p style="color: var(--light-text); line-height: 1.8; text-align: center;">
+            I'M MusiQ is a pioneering electronic music artist who fuses classical piano training with cutting-edge EDM production. Signed to NLM Music Group Africa, a label founded in 2025 by Ailwei Maduna Wa Malada in honor of his mother, Ntampose Lettia Maduna. Together, we're pushing the boundaries of African electronic music and bringing its unique sound to the global stage.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
   <!-- Bookings Page -->
   <div id="bookings" class="page-content">
     <section class="section">
       <div class="container">
-        <h2 class="section-title">Get In Touch</h2>
+        <h2 class="section-title">Bookings & Contact</h2>
         <div style="max-width: 600px; margin: 0 auto; text-align: center; background: var(--card-bg); padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); border: 1px solid var(--border); backdrop-filter: blur(10px);">
           <p style="margin-bottom: 30px; color: var(--light-text);">
-            Have questions or want to work with us? Reach out via email or phone.
+            For bookings, collaborations, or general inquiries, reach out to us through any of these channels:
           </p>
           
           <div class="contact-icons">
@@ -1234,9 +1224,10 @@
     <div class="container">
       <div class="footer-links">
         <a href="#" onclick="showPage('home')">Home</a>
-        <a href="#" onclick="showPage('releases')">Music</a>
-        <a href="#" onclick="showPage('bookings')">Bookings</a>
+        <a href="#" onclick="showPage('music')">Music</a>
+        <a href="#" onclick="showPage('nlm-family')">NLM Family</a>
         <a href="#" onclick="showPage('about')">About</a>
+        <a href="#" onclick="showPage('bookings')">Bookings</a>
       </div>
       <div class="icon-only" style="margin: 30px 0;">
         <a href="https://www.instagram.com/nlmmusicgroupafrica/profilecard/?igsh=MWtpaWhua3l1ZG1weQ==" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -1248,7 +1239,7 @@
         <a href="https://volumo.com/label/849271-nlm-music-group-africa" target="_blank"><i class="fas fa-headphones"></i></a>
       </div>
       <p style="margin-top: 30px; color: var(--light-text); font-size: 0.8rem;">
-        &copy; 2025 NLM Music Group Africa. All rights reserved.
+        &copy; 2025 I'M MusiQ & NLM Music Group Africa. All rights reserved.
       </p>
     </div>
   </footer>
@@ -1279,9 +1270,6 @@
       } else {
         showPage('home');
       }
-      
-      // Start the slider
-      startSlider();
     });
 
     // Smooth scrolling for anchor links
@@ -1316,40 +1304,6 @@
         el.style.animationDelay = `${index * 0.2}s`;
       });
     });
-    
-    // Artist Slider Functionality
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-    const slider = document.getElementById('slider-container');
-    
-    function updateSlider() {
-      slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-      
-      // Update dots
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentSlide);
-      });
-    }
-    
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      updateSlider();
-    }
-    
-    function prevSlide() {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      updateSlider();
-    }
-    
-    function goToSlide(index) {
-      currentSlide = index;
-      updateSlider();
-    }
-    
-    function startSlider() {
-      setInterval(nextSlide, 5000); // Change slide every 5 seconds
-    }
   </script>
 </body>
 </html>
